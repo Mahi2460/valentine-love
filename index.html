@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Mahendiran ❤️ Kowsalya</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body {
+  background: linear-gradient(45deg, #ff4d6d, #ffccd5);
+  font-family: Arial, sans-serif;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+  padding-top: 80px;
+}
+
+h1 { font-size: 36px; }
+p { font-size: 20px; }
+
+button {
+  padding: 15px 30px;
+  font-size: 18px;
+  background: white;
+  color: red;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+button:hover { background: pink; }
+
+/* Floating hearts */
+.heart {
+  position: fixed;
+  font-size: 20px;
+  animation: float 5s linear infinite;
+}
+@keyframes float {
+  from { transform: translateY(100vh); }
+  to { transform: translateY(-10vh); }
+}
+
+/* Popup letter */
+#loveLetter {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  color: red;
+  padding: 20px;
+  border-radius: 20px;
+  display: none;
+  width: 80%;
+  max-width: 400px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Happy Valentine’s Day Kowsalya ❤️</h1>
+<p>From Mahendiran</p>
+<p>You are my happiness, my peace, my forever love 💖</p>
+
+<h2>💑 We First Met: 20 May 2025</h2>
+<h2>💍 Proposal Date: 18 May 2025</h2>
+
+<h2 id="timer"></h2>
+
+<button onclick="showLetter()">💌 Open Love Letter</button>
+<button onclick="proposal()">💍 Will You Be My Valentine?</button>
+
+<!-- Hidden Love Letter -->
+<div id="loveLetter">
+  <h3>My Dear Kowsalya ❤️</h3>
+  <p>
+    From the day I saw you, my life changed.  
+    You are my smile, my strength, and my dream.  
+    I promise to love you forever 😘  
+    – Mahendiran
+  </p>
+  <button onclick="document.getElementById('loveLetter').style.display='none'">Close</button>
+</div>
+
+<!-- Tamil Romantic Song -->
+<audio autoplay loop>
+  <source src="https://files.catbox.moe/4l8q6t.mp3" type="audio/mp3">
+</audio>
+
+<script>
+// Love Timer
+let startDate = new Date("2025-05-20");
+function updateTimer() {
+  let now = new Date();
+  let diff = now - startDate;
+  let days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  document.getElementById("timer").innerHTML = "💞 We have been together for " + days + " days";
+}
+setInterval(updateTimer, 1000);
+
+// Floating Hearts
+setInterval(() => {
+  let heart = document.createElement("div");
+  heart.innerHTML = "❤️";
+  heart.className = "heart";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = Math.random() * 30 + 10 + "px";
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 5000);
+}, 300);
+
+// Love Letter Popup
+function showLetter() {
+  document.getElementById("loveLetter").style.display = "block";
+}
+
+// Proposal Prank
+function proposal() {
+  let yes = confirm("Kowsalya ❤️ Will you be my Valentine forever?");
+  if (yes) {
+    alert("I LOVE YOU 😘 YOU ARE MY FOREVER ❤️");
+  } else {
+    alert("No is not allowed 😜 Try again!");
+  }
+}
+</script>
+
+</body>
+</html>
