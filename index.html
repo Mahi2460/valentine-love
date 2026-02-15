@@ -50,8 +50,6 @@ button:hover { background: pink; }
 }
 /* Heart Photo Frame */
 .photo-frame {
-  width: 220px;
-  height: 220px;
   background: white;
   padding: 10px;
   display: inline-block;
@@ -59,24 +57,6 @@ button:hover { background: pink; }
   border-radius: 20px;
   box-shadow: 0 0 15px red;
   position: relative;
-}
-
-.photo-frame::before,
-.photo-frame::after {
-  content: "";
-  position: absolute;
-  width: 100px;
-  height: 160px;
-  background: red;
-  border-radius: 100px 100px 0 0;
-  top: -40px;
-  left: 60px;
-  transform: rotate(-45deg);
-  opacity: 0.3;
-}
-.photo-frame::after {
-  transform: rotate(45deg);
-  left: 100px;
 }
 
 .photo-frame img {
@@ -235,6 +215,7 @@ function proposal() {
 
 </body>
 </html>
+
 
 
 
