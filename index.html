@@ -10,7 +10,8 @@ body {
   font-family: Arial, sans-serif;
   text-align: center;
   color: white;
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: auto;
   padding-top: 60px;
 }
 
@@ -33,13 +34,20 @@ button:hover { background: pink; }
 .heart {
   position: fixed;
   font-size: 20px;
-  animation: float 5s linear infinite;
-}
-@keyframes float {
-  from { transform: translateY(100vh); }
-  to { transform: translateY(-10vh); }
+  animation: fall 5s linear infinite;
 }
 
+@keyframes fall {
+  0% {
+    transform: translateY(-10vh) translateX(0px);
+  }
+  50% {
+    transform: translateY(50vh) translateX(20px);
+  }
+  100% {
+    transform: translateY(100vh) translateX(-20px);
+  }
+}
 /* Heart Photo Frame */
 .photo-frame {
   width: 220px;
@@ -123,6 +131,7 @@ button:hover { background: pink; }
 </div>
 <div class="photo-frame">
   <img src="photos/love4.png">
+</div>
 
 <!-- Love Letter -->
 <div id="loveLetter">
@@ -221,3 +230,4 @@ function proposal() {
 
 </body>
 </html>
+
