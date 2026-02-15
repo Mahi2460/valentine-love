@@ -88,7 +88,6 @@ button:hover { background: pink; }
 
 /* Love Letter Popup */
 #loveLetter {
-  #loveLetter {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -204,28 +203,6 @@ function updateTimer() {
   document.getElementById("timer").innerHTML = "💞 நாம் காதலிக்க ஆரமித்து " + days + " நாட்கள் ஆகிவிட்டது";
 }
 setInterval(updateTimer, 1000);
-
-	<h2 id="countdown"></h2>
-let targetDate = new Date("2025-05-20 00:00:00").getTime();
-function updateCountdown() {
-  let now = new Date().getTime();
-  let diff = targetDate - now;
-
-  if (diff < 0) {
-    document.getElementById("countdown").innerHTML = "❤️ Happy Love Day ❤️";
-    return;
-  }
-
-  let days = Math.floor(diff / (1000 * 60 * 60 * 24));
-  let hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-  let minutes = Math.floor((diff / (1000 * 60)) % 60);
-  let seconds = Math.floor((diff / 1000) % 60);
-
-  document.getElementById("countdown").innerHTML =
-    "💞 இன்னும் " + days + " நாள் " + hours + " மணி " + minutes + " நிமிடம் " + seconds + " விநாடி";
-}
-
-setInterval(updateCountdown, 1000);
 updateCountdown();
 	
 
@@ -258,6 +235,7 @@ function proposal() {
 
 </body>
 </html>
+
 
 
 
