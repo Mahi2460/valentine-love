@@ -113,8 +113,8 @@ button:hover { background: pink; }
 <p>– உன் மகேந்திரன் 😘</p>
 <p>நீ என் வாழ்க்கையின் சந்தோஷம், அமைதி, என்றும் காதல் 💞</p>
 
-<h2>👫 முதல் சந்திப்பு : 20 மே 2025</h2>
-<h2>💍 காதல் பிரபோசல் : 18 மே 2025</h2>
+<h2>💍 Propasal Date : 18 மே 2025</h2>
+<h2>👫 First Meet : 20 மே 2025</h2>
 
 <h2 id="timer"></h2>
 
@@ -182,17 +182,17 @@ button:hover { background: pink; }
     உன்னை பார்த்த அந்த முதல் நாளிலிருந்து  
     என் வாழ்க்கை முழுவதும் மாறிவிட்டது.  
     நீ என் சிரிப்பு, என் பலம், என் கனவு.  
-    என்றும் உன்னை காதலிப்பேன் 😘  
+    நான் என்றும் உன்னை காதலிப்பேன் 😘  
     – உன் மகேந்திரன்
   </p>
-  <button onclick="document.getElementById('loveLetter').style.display='none'">மூடு</button>
+  <button onclick="document.getElementById('loveLetter').style.display='none'">close</button>
 </div>
 
 <!-- Tamil Song -->
 <audio id="song" loop>
-  <source src="music/love_song.mp3" type="audio/mp3">
+  <source src="music/love_song.mp3" type="audio/mpeg">
 </audio>
-<button onclick="document.getElementById('song').play()">▶ காதல் பாடல் இயக்கு</button>
+<button onclick="document.getElementById('song').play()">▶ Play the Love Antham</button>
 
 <script>
 // Love Timer
@@ -201,9 +201,35 @@ function updateTimer() {
   let now = new Date();
   let diff = now - startDate;
   let days = Math.floor(diff / (1000 * 60 * 60 * 24));
-  document.getElementById("timer").innerHTML = "💞 நாம் காதலித்து " + days + " நாட்கள் ஆகிவிட்டது";
+  document.getElementById("timer").innerHTML = "💞 நாம் காதலிக்க ஆரமித்து " + days + " நாட்கள் ஆகிவிட்டது";
 }
 setInterval(updateTimer, 1000);
+
+	<h2 id="countdown"></h2>
+// Target date (change this)
+let targetDate = new Date("2025-05-20 00:00:00").getTime();
+
+function updateCountdown() {
+  let now = new Date().getTime();
+  let diff = targetDate - now;
+
+  if (diff < 0) {
+    document.getElementById("countdown").innerHTML = "❤️ Happy Love Day ❤️";
+    return;
+  }
+
+  let days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  let hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  let minutes = Math.floor((diff / (1000 * 60)) % 60);
+  let seconds = Math.floor((diff / 1000) % 60);
+
+  document.getElementById("countdown").innerHTML =
+    "💞 இன்னும் " + days + " நாள் " + hours + " மணி " + minutes + " நிமிடம் " + seconds + " விநாடி";
+}
+
+setInterval(updateCountdown, 1000);
+updateCountdown();
+	
 
 // Floating Hearts
 setInterval(() => {
@@ -234,5 +260,6 @@ function proposal() {
 
 </body>
 </html>
+
 
 
