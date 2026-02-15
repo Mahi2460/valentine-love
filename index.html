@@ -10,7 +10,7 @@ body {
   font-family: Arial, sans-serif;
   text-align: center;
   color: white;
-  overflow-x: auto;
+  overflow-x: hidden;
   overflow-y: auto;
   padding-top: 60px;
 }
@@ -88,6 +88,7 @@ button:hover { background: pink; }
 
 /* Love Letter Popup */
 #loveLetter {
+  #loveLetter {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -99,6 +100,9 @@ button:hover { background: pink; }
   display: none;
   width: 80%;
   max-width: 400px;
+  max-height: 70vh;      /* ✅ Limit height */
+  overflow-y: auto;       /* ✅ Enable scroll inside popup */
+  z-index: 9999;
 }
 </style>
 </head>
@@ -230,4 +234,5 @@ function proposal() {
 
 </body>
 </html>
+
 
